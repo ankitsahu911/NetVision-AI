@@ -1,5 +1,4 @@
 # NetVision-AI
-# SmartNet AI
 
 A local network and Wi-Fi analyzer that runs on your computer to help you understand your connection quality, connected devices, and browser performance — paired with a companion browser extension.
 

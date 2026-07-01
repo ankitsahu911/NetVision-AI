@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartNet AI WiFi Health Analyzer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">SmartNet AI</p>
+          <h1>WiFi Health Analyzer</h1>
+        </div>
+        <div class="actions">
+          <button id="scanButton" class="secondary-button" type="button">
+            <span aria-hidden="true">S</span>
+            <span>Scan Devices</span>
+          </button>
+          <button id="testButton" class="primary-button" type="button">
+            <span aria-hidden="true">T</span>
+            <span>Run Full Test</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="score-layout">
+        <article class="health-panel">
+          <div class="score-ring" id="healthScore">--</div>
+          <div>
+            <span class="metric-label">WiFi Health Score</span>
+            <strong id="healthQuality">Waiting</strong>
+            <p id="diagnosisSummary">Run a test to generate the first diagnosis.</p>
+          </div>
+        </article>
+
+        <div class="metric-grid">
+          <article class="metric-panel">
+            <span class="metric-label">Download</span>
+            <strong id="downloadSpeed">--</strong>
+            <span class="metric-caption">Mbps</span>
+          </article>
+          <article class="metric-panel">
+            <span class="metric-label">Upload</span>
+            <strong id="uploadSpeed">--</strong>
+            <span class="metric-caption">Mbps</span>
+          </article>
+          <article class="metric-panel">
+            <span class="metric-label">Ping</span>
+            <strong id="pingValue">--</strong>
+            <span class="metric-caption">ms</span>
+          </article>
+          <article class="metric-panel">
+            <span class="metric-label">Devices</span>
+            <strong id="deviceCount">--</strong>
+            <span id="networkRange" class="metric-caption">Network --</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="main-column">
+          <section class="panel">
+            <div class="section-heading">
+              <h2>Activity Readiness</h2>
+              <span id="lastRun" class="pill">No test</span>
+            </div>
+            <div id="activityGrid" class="activity-grid"></div>
+          </section>
+
+          <section class="panel">
+            <div class="section-heading">
+              <h2>Detected Devices</h2>
+              <span id="loadLabel" class="pill">--</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>IP Address</th>
+                    <th>Device</th>
+                    <th>Type</th>
+                    <th>MAC Address</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="deviceRows">
+                  <tr>
+                    <td colspan="5" class="empty-state">No devices scanned yet.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="section-heading">
+              <h2>History</h2>
+              <a class="text-link" href="/api/history.csv">Export CSV</a>
+            </div>
+            <div id="historyBars" class="history-bars"></div>
+          </section>
+        </div>
+
+        <aside class="side-column">
+          <section class="panel">
+            <div class="section-heading">
+              <h2>AI Diagnosis</h2>
+              <span id="gainValue" class="pill">+0 Mbps</span>
+            </div>
+            <div id="findingList" class="finding-list"></div>
+          </section>
+
+          <section class="panel">
+            <div class="section-heading">
+              <h2>Speed Booster</h2>
+            </div>
+            <div id="actionList" class="action-list"></div>
+          </section>
+
+          <section class="panel">
+            <div class="section-heading">
+              <h2>Connection Details</h2>
+            </div>
+            <dl class="detail-list">
+              <div>
+                <dt>Adapter</dt>
+                <dd id="adapterName">--</dd>
+              </div>
+              <div>
+                <dt>Gateway</dt>
+                <dd id="gatewayIp">--</dd>
+              </div>
+              <div>
+                <dt>Jitter</dt>
+                <dd id="jitterValue">--</dd>
+              </div>
+              <div>
+                <dt>Packet loss</dt>
+                <dd id="lossValue">--</dd>
+              </div>
+            </dl>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

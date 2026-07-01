@@ -1,0 +1,7 @@
+services:
+  device-scanner:
+    build: .
+    container_name: smartnet-device-scanner
+    ports:
+      - "5000:5000"
+    restart: unless-stopped

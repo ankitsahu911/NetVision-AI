@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartNet AI</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="header">
+        <div>
+          <p class="eyebrow">SmartNet AI</p>
+          <h1>Optimizer</h1>
+        </div>
+        <button id="refreshButton" class="icon-button" type="button" title="Run test">
+          <span aria-hidden="true">T</span>
+        </button>
+      </header>
+
+      <section class="score-row">
+        <div class="score-card">
+          <span class="label">Health</span>
+          <strong id="healthScore">--</strong>
+        </div>
+        <div class="score-card">
+          <span class="label">Download</span>
+          <strong id="downloadSpeed">--</strong>
+        </div>
+        <div class="score-card">
+          <span class="label">Devices</span>
+          <strong id="deviceCount">--</strong>
+        </div>
+      </section>
+
+      <section class="browser-card">
+        <div class="browser-stat">
+          <span>Tabs</span>
+          <strong id="tabCount">--</strong>
+        </div>
+        <div class="browser-stat">
+          <span>Streaming</span>
+          <strong id="streamingCount">--</strong>
+        </div>
+        <div class="browser-stat">
+          <span>Gain</span>
+          <strong id="gainValue">--</strong>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Diagnosis</h2>
+          <span id="loadState">--</span>
+        </div>
+        <ul id="findingList" class="finding-list">
+          <li class="empty">Start the companion service first.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Browser Activity</h2>
+        </div>
+        <ul id="tabList" class="tab-list"></ul>
+      </section>
+
+      <button id="optimizeButton" class="primary-action" type="button">Optimize Browser</button>
+
+      <section class="settings">
+        <label for="apiUrl">API URL</label>
+        <div class="input-row">
+          <input id="apiUrl" type="url" spellcheck="false" />
+          <button id="saveButton" type="button">Save</button>
+        </div>
+      </section>
+
+      <p id="statusText" class="status"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

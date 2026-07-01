@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "SmartNet AI Device Viewer",
+  "description": "Shows connected devices detected by the SmartNet local companion service.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "SmartNet AI",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://localhost:5000/*",
+    "http://127.0.0.1:5000/*"
+  ]
+}

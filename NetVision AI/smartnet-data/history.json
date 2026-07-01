@@ -1,0 +1,12 @@
+[
+  {
+    "scanned_at": "2026-06-21T14:38:03+05:30",
+    "health_score": 74,
+    "download_mbps": 13.68,
+    "upload_mbps": 1.47,
+    "ping_ms": 45.8,
+    "jitter_ms": 11.1,
+    "packet_loss_percent": 0.0,
+    "device_count": 2
+  }
+]
